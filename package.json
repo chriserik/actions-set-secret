@@ -11,6 +11,7 @@
     "@actions/core": "^1.2.4",
     "@actions/github": "^4.0.0",
     "@octokit/core": "^3.1.2",
+    "@vercel/ncc": "^0.24.1",
     "eslint": "^7.6.0",
     "tweetsodium": "0.0.5"
   },
@@ -19,16 +20,5 @@
     "eslint-plugin-jsdoc": "^30.2.2",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "rm -rf dist && lint-staged && ncc build index.js -o dist",
-      "post-commit": "npm i"
-    }
-  },
-  "lint-staged": {
-    "*/*.js": [
-      "eslint . --fix"
-    ]
   }
 }
